@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/burn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="烧录程序"
+
+        />
+    <TextView
+        android:id="@+id/text_byte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="接收："/>
+    <com.zmm.usbserialforandroidtest.ColorPickerDome
+        android:id="@+id/colorPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_below="@+id/colorPicker"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Switch
+                android:id="@+id/light_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:text="点亮" />
+            <Switch
+                android:id="@+id/light_breath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:text="呼吸灯" />
+            <Switch
+                android:id="@+id/light_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:text="节奏灯" />
+            <!--<Switch-->
+                <!--android:id="@+id/sound_wave"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:checked="false"-->
+                <!--android:padding="5dp"-->
+                <!--android:textSize="15sp"-->
+                <!--android:text="频段波" />-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/brightness_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/light_switch"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blank_dark"
+                android:text="亮度值" />
+
+            <SeekBar
+                android:id="@+id/brightness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:max="255"
+                android:progress="100" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sleep_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/light_switch"
+            android:orientation="horizontal"
+
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blank_dark"
+                android:text="周期值" />
+
+            <SeekBar
+                android:id="@+id/sleep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:progress="100" />
+        </LinearLayout>
+
+        <ImageView
+            android:paddingTop="10dp"
+            android:visibility="gone"
+            android:id="@+id/music_view"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

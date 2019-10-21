@@ -1,0 +1,2 @@
+include ':app', ':ColorPickerPreference_'
+project(':ColorPickerPreference_').projectDir = new File('ColorPickerPreference')
